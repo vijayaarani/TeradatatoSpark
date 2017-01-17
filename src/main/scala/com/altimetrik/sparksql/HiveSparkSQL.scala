@@ -14,7 +14,7 @@ object HiveSparkSQL {
    val conf = new SparkConf().setAppName("hive-Sparksql").setMaster("local")
    // passing sparkconf to sparkcontext
    val sc = new SparkContext(conf)
-   // creating hivecontext  
+   // creating hivecontext to hive
    val  hiveContext = new HiveContext(sc)
    // reading hive metastore and extract hive query data to spark and store into dataframe 
    // val query = "  "

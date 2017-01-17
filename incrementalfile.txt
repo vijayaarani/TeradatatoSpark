@@ -1,0 +1,4 @@
+100215,kishore,ban,45000,m
+100216,ganesh,che,286000,m
+100217,vignesh,pune,226000,m
+100218,sundeep,mum,65000,m

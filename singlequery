@@ -1,0 +1,9 @@
+.logon 127.0.0.1/dbc,dbc;
+database spark;
+select * from sales;
+insert into customer values(?,?,?,?);
+update customer set loc = 'che' where loc = 'pune';
+.import 
+.export 
+.logoff;
+.quit;

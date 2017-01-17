@@ -1,0 +1,13 @@
+.logon 127.0.0.1/dbc,dbc;
+database spark;
+select * from sales;
+select id,name from sales;
+select count(*) from customers;
+create table sample as select * from sales;
+insert into sales select * from customers;
+.import vartext ',' file = "/home/spark_db/customer_data
+insert into 
+.export 
+select * from sales;
+.logoff;
+.quit;

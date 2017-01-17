@@ -1,0 +1,11 @@
+.logon 127.0.0.1/dbc,dbc;
+database spark;
+select * from sales where loc = 'hyd';
+select max(sal)from sales group by dname ;
+.import
+select count(*) from customers;
+create table sample as select * from sales;
+insert into sales select * from customer;
+.export 
+.logoff;
+.quit;

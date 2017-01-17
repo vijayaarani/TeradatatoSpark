@@ -1,0 +1,14 @@
+100201,anil,hyd,23000,m
+100202,deepthi,ban,42000,f
+100203,suman,hyd,52000,m
+100204,prakash,che,31000,m
+100205,vijay,che,32000,m
+100206,vinay,ban,41000,m
+100207,rushi,che,40400,m
+100208,suresh,ban,30200,m
+100209,kumar,ban,12000,m
+100210,sravan,hyd,51000,m
+100211,giri,ban,34000,m
+100212,sunitha,hyd,40200,f
+100213,kranthi,ban,16400,m
+100214,kiran,pune,22000,m

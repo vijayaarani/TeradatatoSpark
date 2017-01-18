@@ -60,9 +60,31 @@ object UpdateSpark {
      // val sampledf = sqlContext.sql("select * from Test")
       val insert  = sqlContext.sql("select * from customer")
       
+      
+       // store final results to hdfs in json format
         insert.write.format("json").save("Spark_results")
       // insert.write.format("json").mode("Append").save("json_out")
         
+    // departmnet data details      
+    val load = sc.textFile("dept.dat")
+    //schema definition 
+               
+    val metadata = "deptid dname dno"  
+    // data to schema mapping 
+    val meta = StructType(metadata.split(" ").map(fieldName =>StructField(fieldName,StringType,true)))
+    
+    val mapping = load.map(_.split(",")).map(p => Row(p(0),p(1),p(2)))
+   // convert dataframe to temparary table
+        
+       val deptDF= sqlContext.createDataFrame(mapping,meta )
+       
+       // dataframe resulted data 
+          salesDF.show()
+       // val update = salesDF.map(row.getString(1),row.getString(2))
+           
+        // salesDataFrame convert to temp table 
+       
+      salesDF.registerTempTable("dept")
                    
     // run sql queries into customer table
                       

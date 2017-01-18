@@ -29,8 +29,8 @@ object SparksqlConverter {
     // spark configuration passing to sparkcontext
     
     val sc = new SparkContext(conf)
-     val in = args(0)
-      val out = args(1)
+     // val in = args(0)
+     // val out = args(1)
     
    // import sqlcontext and create 
     
@@ -38,7 +38,7 @@ object SparksqlConverter {
     
     // data loding to spark 
     
-    val data = sc.textFile(in)
+    val data = sc.textFile("test.txt")
     //schema definition 
                
     val schemaString = "custid custname loc sal gender"  
@@ -62,6 +62,9 @@ object SparksqlConverter {
        // execute multiple queries
      
          sqlContext.sql("select * from sales order by loc desc").collect().foreach(println) 
+         sqlContext.sql("select custid,custname from sales").collect().foreach(println)
+
+         
          
          // sqlContext.sql("select * from deepthi").collect().foreach(println)                              
        //count.collect().foreach(println)

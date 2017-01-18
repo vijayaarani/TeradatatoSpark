@@ -17,13 +17,15 @@ object HiveSparkSQL {
    // creating hivecontext to hive
    val  hiveContext = new HiveContext(sc)
    // reading hive metastore and extract hive query data to spark and store into dataframe 
+  //  val query = args(0)   
+    val out = args(0)
    // val query = "  "
-      val df = hiveContext.sql("select * from customers")
+      val df = hiveContext.sql("select * from vijay.sales_data")
       // using dataframe show command we can see the query data
                      df.show()
        // apply count function count the no of customer              
               println("Total Records " + df.count())
              
-            df.write.format("orc").save("hive_results")          
+            df.saveAsParquetFile(out)          
    
             }}

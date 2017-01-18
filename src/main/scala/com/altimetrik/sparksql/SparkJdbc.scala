@@ -23,7 +23,6 @@ object SparkJdbc {
   jdbcDF.printSchema()
   jdbcDF.registerTempTable("test")
   jdbcDF.write.format("json").save("teradata_results")
-
   
 }
 }
